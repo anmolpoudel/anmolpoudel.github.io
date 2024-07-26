@@ -3,32 +3,160 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
+    <title>My homepage</title>
     <style>
-        h1 {
-            text-align: center;
-            color: goldenrod;
-            background-color: navy;
-            font-family: Arial, Helvetica, sans-serif;
-            padding: 1rem;
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif, system;
+      }
+
+      header {
+        /* box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px; */
+      }
+
+      #website-logo {
+        height: 10vh;
+      }
+
+      main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: url("background.png");
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        height: 90vh;
+        flex-direction: column;
+      }
+      #search-providers {
+        display: flex;
+        justify-content: center;
+        gap: 6ch;
+        padding: 1rem;
+        font-size: medium;
+      }
+      .Google-or-Bing {
+        display: flex;
+        justify-content: center;
+        gap: 1ch;
+      }
+
+      input[type="radio"] {
+        width: 1rem;
+      }
+      .search-engine-logo {
+        height: 4vh;
+      }
+
+      .textBar-and-searchButton {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      @media (orientation: landscape) {
+        .textBar-and-searchButton {
+          width: 60vw;
         }
-        #home-button {
-            width: 2.6rem;
-            position: fixed;
-            bottom: 1rem;
-            right: 1rem;
-            /* border: 5px solid grey; */
-            border-radius: 30%;
-            padding: 0.5rem;
-            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      }
+      @media (orientation: portrait) {
+        .textBar-and-searchButton {
+          width: 80vw;
         }
+      }
+
+      input[type="text"] {
+        border-radius: 0.8rem 0 0 0.8rem;
+        padding: 1rem;
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      input[type="text"],
+      button {
+        border: none;
+        font-size: medium;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      }
+      button {
+        border-radius: 0 0.8rem 0.8rem 0;
+        padding: 0.34rem 1.2rem;
+        background-color: #4caf50;
+        color: white;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: lightcoral;
+      }
+
+      #banner {
+        display: flex;
+        align-items: center;
+      }
+      #website-name {
+        font-weight: bold;
+        font-size: xx-large;
+        color: rgb(92, 107, 85);
+      }
+      a {
+        text-decoration: none;
+      }
     </style>
   </head>
   <body>
-    <h1>Welcome</h1>
-    <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Beaming%20Face%20with%20Smiling%20Eyes.png">
-    <a href="https://google.com" target="_blank">
-        <img src="./25694.png" id="home-button">
-    </a>
+    <header>
+      <a href="./queryHub.html">
+        <span id="banner">
+          <img src="./logo.png" id="website-logo" />
+          <span id="website-name">QueryHub</span>
+        </span>
+      </a>
+    </header>
+    <main>
+      <div id="container">
+        <div id="search-providers">
+          <div class="Google-or-Bing">
+            <input
+              type="radio"
+              id="Google"
+              name="company"
+              value="google"
+              checked
+            />
+            <img src="./google.png" class="search-engine-logo" />
+          </div>
+          <div class="Google-or-Bing">
+            <input type="radio" id="Bing" name="company" value="bing" />
+            <img src="./bing.png" class="search-engine-logo" />
+          </div>
+        </div>
+        <div class="textBar-and-searchButton">
+          <input type="text" id="query" placeholder="Enter a query to search" />
+          <button onclick="search()">Search 🔎︎</button>
+        </div>
+      </div>
+    </main>
   </body>
 </html>
+<script>
+  function search() {
+    const query = document.getElementById("query").value;
+    const selectedProvider = document.querySelector(
+      'input[name="company"]:checked'
+    ).value;
+    let searchUrl = "";
+
+    if (selectedProvider === "google") {
+      searchUrl = `https://www.google.com/search?q=${encodeURIComponent(
+        query
+      )}`;
+    } else if (selectedProvider === "bing") {
+      searchUrl = `https://www.bing.com/search?q=${encodeURIComponent(query)}`;
+    }
+
+    if (searchUrl) {
+      window.location.href = searchUrl;
+    }
+  }
+</script>
