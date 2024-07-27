@@ -4,182 +4,57 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My homepage</title>
+    <link rel="stylesheet" href="index.css" />
     <style>
       body {
         margin: 0;
         font-family: Arial, Helvetica, sans-serif, system;
       }
-
-      main {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-image: url("background.png");
-        background-position: center center;
-        background-repeat: no-repeat;
-        background-size: contain;
-        height: 90vh;
-        flex-direction: column;
-      }
-      #search-providers {
-        display: flex;
-        justify-content: center;
-        gap: 6ch;
-        padding: 1rem;
-        font-size: medium;
-      }
-      .Google-or-Bing {
-        display: flex;
-        justify-content: center;
-        gap: 1ch;
-      }
-
-      input[type="radio"] {
-        width: 1rem;
-      }
-      .search-engine-logo {
-        height: 4vh;
-      }
-
-      .textBar-and-searchButton {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-
-      @media (orientation: landscape) {
-        .textBar-and-searchButton {
-          width: 60vw;
-        }
-      }
-      @media (orientation: portrait) {
-        .textBar-and-searchButton {
-          width: 80vw;
-        }
-      }
-
-      input[type="text"] {
-        border-radius: 0.8rem 0 0 0.8rem;
-        padding: 1rem;
-        width: 100%;
-        box-sizing: border-box;
-      }
-
-      input[type="text"],
-      button {
-        border: none;
-        font-size: medium;
-        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-      }
-      button {
-        border-radius: 0 0.8rem 0.8rem 0;
-        padding: 0.34rem 1.2rem;
-        background-color: #4caf50;
-        color: white;
-        cursor: pointer;
-      }
-      button:hover {
-        background-color: lightcoral;
-      }
-
-      #banner {
-        display: flex;
-        align-items: center;
-        padding: 1rem 1rem 0 1rem;
-        gap: 1rem;
-        position: fixed;
-        right: 0.2rem;
-      }
-      #github {
-        height: 3rem;
-      }
-      #github {
-        font-weight: bold;
-        font-size: 2rem;
-        color: black;
-      }
-      a {
-        text-decoration: none;
-      }
-
-      #floating-div {
-        position: fixed;
-        right: 2rem;
-        bottom: 2rem;
-        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-        border-radius: 1rem;
-        padding: 0.3rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      #floating-div:hover {
-        translate: 0 -8px;
-        transition-duration: 0.4s;
-      }
-      #icon {
-        height: 3.4rem;
-        border-radius: 0.8rem;
-      }
-
-      #website-logo {
-        height: 5.5rem;
-      }
-      #queryhub {
-        font-weight: bold;
-        font-size: 1.8rem;
-        color: rgb(76, 94, 75);
-      }
-      #website {
-        display: flex;
-        align-items: center;
-        padding: 0;
-      }
     </style>
   </head>
   <body>
     <header>
+      <div>
+        <img src="./website logo.png" style="height: 5.5rem" /><span
+          style="color: #414e3a"
+          >QueryHub</span
+        >
+      </div>
       <a
         href="https://github.com/anmolpoudel/anmolpoudel.github.io/"
         target="_blank"
       >
-        <span id="banner">
-          <img src="./github.png" id="github" />
-          <span id="github">GitHub</span>
-        </span>
+        <img src="./github.png" style="height: 3rem" /><span
+          style="padding: 0 1rem; color: black"
+          >GitHub</span
+        >
       </a>
-      <span id="website">
-        <img src="./website logo.png" id="website-logo" />
-        <span id="queryhub">QueryHub</span>
-      </span>
     </header>
     <main>
-      <div id="container">
-        <div id="search-providers">
-          <div class="Google-or-Bing">
-            <input
-              type="radio"
-              id="Google"
-              name="company"
-              value="google"
-              checked
-            />
-            <img src="./google.png" class="search-engine-logo" />
-          </div>
-          <div class="Google-or-Bing">
-            <input type="radio" id="Bing" name="company" value="bing" />
-            <img src="./bing.png" class="search-engine-logo" />
-          </div>
+      <div id="select-search-providers">
+        <div id="google">
+          <input
+            type="radio"
+            name="company"
+            value="google"
+            checked
+            style="width: 1rem"
+          />
+          <img src="./google.png" style="height: 4vh" />
         </div>
-        <div class="textBar-and-searchButton">
-          <input type="text" id="query" placeholder="Enter a query to search" />
-          <button onclick="search()">Search 🔎︎</button>
+        <div class="bing">
+          <input type="radio" name="company" value="bing" style="width: 1rem" />
+          <img src="./bing.png" style="height: 4vh" />
         </div>
+      </div>
+      <div class="textBar">
+        <input type="text" id="query" placeholder="Enter a query to search" />
+        <button onclick="search()">Search 🔎︎</button>
       </div>
     </main>
     <div id="floating-div">
       <a href="./jsHub.html" target="_blank">
-        <img src="./js.png" id="icon" />
+        <img src="./js.png" id="floating-icon" />
       </a>
     </div>
   </body>

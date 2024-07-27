@@ -1,0 +1,96 @@
+header {
+  display: flex;
+  justify-content: space-between;
+}
+header > * {
+  font-weight: bold;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url("background.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 88vh;
+}
+#select-search-providers {
+  display: flex;
+  justify-content: center;
+  gap: 6ch;
+  padding: 1rem;
+  font-size: medium;
+
+  #google,
+  #bing {
+    display: flex;
+    justify-content: center;
+    gap: 1ch;
+  }
+}
+
+input[type="text"] {
+  border: none;
+  font-size: medium;
+}
+
+.textBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 0.6rem;
+  padding-left: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+  @media (orientation: landscape) {
+    width: 60vw;
+  }
+  @media (orientation: portrait) {
+    width: 80vw;
+  }
+}
+
+button {
+  border: none;
+  font-size: 1.2rem;
+  border-radius: 0 0.6rem 0.6rem 0;
+  padding: 0.8rem 1rem;
+  box-sizing: border-box;
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
+}
+button:hover {
+  background-color: lightcoral;
+}
+
+a {
+  text-decoration: none;
+}
+
+#floating-div {
+  position: fixed;
+  right: 2rem;
+  bottom: 2rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 1rem;
+  padding: 0.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.5s ease-in-out;
+
+  #floating-icon {
+    height: 3.4rem;
+    border-radius: 0.8rem;
+  }
+}
+#floating-div:hover {
+  transform: translate(0, -10px);
+}
