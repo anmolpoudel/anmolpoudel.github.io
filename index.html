@@ -85,13 +85,15 @@
       #banner {
         display: flex;
         align-items: center;
-        padding: 1rem;
+        padding: 1rem 1rem 0 1rem;
         gap: 1rem;
+        position: fixed;
+        right: 0.2rem;
       }
-      #website-logo {
+      #github {
         height: 3rem;
       }
-      #website-name {
+      #github {
         font-weight: bold;
         font-size: 2rem;
         color: black;
@@ -119,6 +121,20 @@
         height: 3.4rem;
         border-radius: 0.8rem;
       }
+
+      #website-logo {
+        height: 5.5rem;
+      }
+      #queryhub {
+        font-weight: bold;
+        font-size: 1.8rem;
+        color: rgb(76, 94, 75);
+      }
+      #website {
+        display: flex;
+        align-items: center;
+        padding: 0;
+      }
     </style>
   </head>
   <body>
@@ -128,10 +144,14 @@
         target="_blank"
       >
         <span id="banner">
-          <img src="./home.png" id="website-logo" />
-          <span id="website-name">GitHub</span>
+          <img src="./github.png" id="github" />
+          <span id="github">GitHub</span>
         </span>
       </a>
+      <span id="website">
+        <img src="./website logo.png" id="website-logo" />
+        <span id="queryhub">QueryHub</span>
+      </span>
     </header>
     <main>
       <div id="container">
@@ -159,7 +179,7 @@
     </main>
     <div id="floating-div">
       <a href="./jsHub.html" target="_blank">
-        <img src="./leaf.png" id="icon" />
+        <img src="./js.png" id="icon" />
       </a>
     </div>
   </body>
