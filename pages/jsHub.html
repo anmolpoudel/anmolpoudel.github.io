@@ -10,39 +10,6 @@
       type="image/x-icon"
     />
     <link rel="stylesheet" href="../css/jsHub.css" />
-    <script defer>
-      function calculate() {
-        var a = document.getElementById("number1").value;
-        var b = document.getElementById("number2").value;
-        var op = document.getElementById("operation").value;
-
-        var result;
-        if (op == "+") {
-          result = parseFloat(a) + parseFloat(b);
-        } else if (op == "-") {
-          result = parseFloat(a) - parseFloat(b);
-        } else if (op == "*") {
-          result = parseFloat(a) * parseFloat(b);
-        } else if (op == "/") {
-          result = parseFloat(a) / parseFloat(b);
-        }
-
-        var existingModal = document.getElementById("resultModal");
-        if (existingModal) {
-          existingModal.remove();
-        }
-
-        var modal = document.createElement("div");
-        modal.id = "resultModal";
-        modal.textContent = `${a} ${op} ${b} = ${result}`;
-        modal.style.boxShadow = "rgba(149, 157, 165, 0.2) 0px 8px 24px";
-        modal.style.fontSize = "xx-large";
-        modal.style.width = "max-content";
-        modal.style.marginTop = "2rem";
-        modal.style.padding = "2rem";
-        document.getElementById("container").appendChild(modal);
-      }
-    </script>
   </head>
   <body>
     <main id="container">
@@ -66,3 +33,35 @@
     </footer>
   </body>
 </html>
+<script defer>
+  function calculate() {
+    var a = document.getElementById("number1").value;
+    var b = document.getElementById("number2").value;
+    var op = document.getElementById("operation").value;
+
+    if (op == "+") {
+      let result = parseFloat(a) + parseFloat(b);
+    } else if (op == "-") {
+      let result = parseFloat(a) - parseFloat(b);
+    } else if (op == "*") {
+      let result = parseFloat(a) * parseFloat(b);
+    } else if (op == "/") {
+      let result = parseFloat(a) / parseFloat(b);
+    }
+
+    var existingModal = document.getElementById("resultModal");
+    if (existingModal) {
+      existingModal.remove();
+    }
+
+    var modal = document.createElement("div");
+    modal.id = "resultModal";
+    modal.textContent = `${a} ${op} ${b} = ${result}`;
+    modal.style.boxShadow = "rgba(149, 157, 165, 0.2) 0px 8px 24px";
+    modal.style.fontSize = "xx-large";
+    modal.style.width = "max-content";
+    modal.style.marginTop = "2rem";
+    modal.style.padding = "2rem";
+    document.getElementById("container").appendChild(modal);
+  }
+</script>
