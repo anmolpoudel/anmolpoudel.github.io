@@ -70,7 +70,9 @@ button {
 button:hover {
   background-color: lightcoral;
 }
-
+input[type="button"]:active {
+  transform: scale(0.95);
+}
 a {
   text-decoration: none;
 }
