@@ -5,6 +5,7 @@ header {
 header > * {
   font-weight: bold;
   font-size: 2rem;
+  font-family: ;
   display: flex;
   align-items: center;
 }
@@ -14,7 +15,7 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image: url("background.png");
+  background-image: url("../img/background.png");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: contain;
