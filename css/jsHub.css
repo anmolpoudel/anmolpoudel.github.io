@@ -1,0 +1,51 @@
+body {
+  margin: 0;
+}
+main {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+#number1,
+#number2 {
+  padding: 0.3rem;
+  font-size: medium;
+}
+#user-input {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1ch;
+}
+#operation {
+  font-weight: bold;
+  font-size: larger;
+}
+input[type="button"] {
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.6rem;
+  background-color: lightcoral;
+  color: white;
+  font-size: medium;
+  transition: background-color 0.3s, transform 0.1s;
+}
+input[type="button"]:hover {
+  background-color: deeppink;
+}
+input[type="button"]:active {
+  background-color: darkred;
+  transform: scale(0.95);
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #4caf50;
+  color: white;
+}

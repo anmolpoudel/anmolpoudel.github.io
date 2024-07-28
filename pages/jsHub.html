@@ -4,54 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JavaScript Practice</title>
-    <style>
-      #number1,
-      #number2 {
-        padding: 0.3rem;
-        font-size: medium;
-      }
-      #container {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-      }
-      #user-input {
-        margin-top: 1rem;
-        display: flex;
-        justify-content: center;
-        gap: 1ch;
-      }
-      #operation {
-        font-weight: bold;
-        font-size: larger;
-      }
-      input[type="button"] {
-        padding: 0.5rem;
-        border: none; 
-        border-radius: 0.6rem;
-        background-color: grey;
-        color: white;
-        font-size: medium;
-      }
-    </style>
-  </head>
-  <body>
-    <div id="container">
-      <h1 style="text-decoration: underline;">Simple Calculator</h1>
-      <div id="user-input">
-        <input type="number" placeholder="Enter first number" id="number1" />
-        <select id="operation">
-          <option value="+">+</option>
-          <option value="-">-</option>
-          <option value="*">x</option>
-          <option value="/">÷</option>
-        </select>
-        <input type="number" placeholder="Enter second number" id="number2" />
-      </div>
-      <div style="margin-top: 1rem">
-        <input type="button" value="Calculate" onclick="calculate()" />
-      </div>
-    </div>
+    <link rel="stylesheet" href="../css/jsHub.css" />
     <script defer>
       function calculate() {
         var a = document.getElementById("number1").value;
@@ -85,5 +38,26 @@
         document.getElementById("container").appendChild(modal);
       }
     </script>
+  </head>
+  <body>
+    <main id="container">
+      <h1 style="text-decoration: underline">Simple Calculator</h1>
+      <div id="user-input">
+        <input type="number" placeholder="Enter first number" id="number1" />
+        <select id="operation">
+          <option value="+">+</option>
+          <option value="-">-</option>
+          <option value="*">*</option>
+          <option value="/">÷</option>
+        </select>
+        <input type="number" placeholder="Enter second number" id="number2" />
+      </div>
+      <div style="margin-top: 1rem">
+        <input type="button" value="Calculate" onclick="calculate()" />
+      </div>
+    </main>
+    <footer>
+      <div>&copy; 2024 - Anmol Poudel</div>
+    </footer>
   </body>
 </html>
