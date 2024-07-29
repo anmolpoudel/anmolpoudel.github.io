@@ -79,12 +79,13 @@
     background-color: #4caf50;
     color: white;
     cursor: pointer;
+    transition: transform 0.2s;
   }
   button:hover {
     background-color: lightcoral;
   }
   button:active {
-    transform: scale(0.95);
+    transform: scale(1.05);
   }
 
   a {

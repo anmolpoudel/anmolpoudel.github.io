@@ -43,7 +43,12 @@
         </div>
       </div>
       <div class="textBar">
-        <input type="text" id="query" placeholder="Enter a query to search" />
+        <input
+          type="text"
+          id="query"
+          placeholder="Enter a query to search"
+          style="outline: none"
+        />
         <button onclick="search()">Search</button>
       </div>
     </main>
@@ -60,15 +65,23 @@
     var engine = document.querySelector('input[name="company"]:checked').value;
 
     if (engine === "google") {
-      let searchUrl = `https://www.google.com/search?q=${encodeURIComponent(
+      var searchUrl = `https://www.google.com/search?q=${encodeURIComponent(
         text
       )}`;
     } else if (engine === "bing") {
-      let searchUrl = `https://www.bing.com/search?q=${encodeURIComponent(
+      var searchUrl = `https://www.bing.com/search?q=${encodeURIComponent(
         text
       )}`;
     }
 
     window.location.href = searchUrl;
   }
+
+  document
+    .getElementById("query")
+    .addEventListener("keydown", function (event) {
+      if (event.keyCode === 13) {
+        search();
+      }
+    });
 </script>
