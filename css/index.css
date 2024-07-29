@@ -114,3 +114,12 @@
     transform: translate(0, -10px);
   }
 }
+
+#query {
+  flex-grow: 1;
+  outline: none;
+}
+#query:active,
+#query:focus {
+  background-color: transparent;
+}
