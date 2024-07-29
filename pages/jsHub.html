@@ -38,15 +38,16 @@
     var a = document.getElementById("number1").value;
     var b = document.getElementById("number2").value;
     var op = document.getElementById("operation").value;
+    let result = 0;
 
     if (op == "+") {
-      let result = parseFloat(a) + parseFloat(b);
+      result = parseFloat(a) + parseFloat(b);
     } else if (op == "-") {
-      let result = parseFloat(a) - parseFloat(b);
+      result = parseFloat(a) - parseFloat(b);
     } else if (op == "*") {
-      let result = parseFloat(a) * parseFloat(b);
+      result = parseFloat(a) * parseFloat(b);
     } else if (op == "/") {
-      let result = parseFloat(a) / parseFloat(b);
+      result = parseFloat(a) / parseFloat(b);
     }
 
     var existingModal = document.getElementById("resultModal");

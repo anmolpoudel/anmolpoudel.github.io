@@ -8,16 +8,31 @@ main {
 }
 #number1,
 #number2 {
-  padding: 0.3rem;
+  border: 1px dashed black;
+  border-radius: 0.6rem;
+  padding: 0.5rem;
   font-size: medium;
 }
-#user-input {
-  margin-top: 1rem;
-  display: flex;
-  justify-content: center;
-  gap: 1ch;
+@media (orientation: landscape) {
+  #user-input {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 1ch;
+  }
+}
+@media (orientation: portrait) {
+  #user-input {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1ch;
+  }
 }
 #operation {
+  border: 1px dashed black;
+  border-radius: 0.6rem;
   font-weight: bold;
   font-size: larger;
 }

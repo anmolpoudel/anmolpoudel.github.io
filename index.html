@@ -10,6 +10,7 @@
       type="image/x-icon"
     />
     <link rel="stylesheet" href="./css/index.css" />
+    <link rel="stylesheet" href="./css/index-portrait.css" />
     <style>
       body {
         margin: 0;
@@ -20,39 +21,30 @@
   <body>
     <header>
       <div>
-        <img src="./img/website logo.png" style="height: 5.5rem" />
+        <img src="./img/website logo.png" id="website-logo" />
         <span style="color: #414e3a">Anmol's Homepage</span>
       </div>
       <a
         href="https://github.com/anmolpoudel/anmolpoudel.github.io/"
         target="_blank"
       >
-        <img src="./img/github.png" style="height: 3rem" /><span
-          style="padding: 0 1rem; color: black"
-          >GitHub</span
-        >
+        <img src="./img/github.png" id="github-logo" /><span>GitHub</span>
       </a>
     </header>
     <main>
       <div id="select-search-providers">
         <div id="google">
-          <input
-            type="radio"
-            name="company"
-            value="google"
-            checked
-            style="width: 1rem"
-          />
-          <img src="./img/google.png" style="height: 4vh" />
+          <input type="radio" name="company" value="google" checked />
+          <img src="./img/google.png" />
         </div>
-        <div class="bing">
-          <input type="radio" name="company" value="bing" style="width: 1rem" />
-          <img src="./img/bing.png" style="height: 4vh" />
+        <div id="bing">
+          <input type="radio" name="company" value="bing" />
+          <img src="./img/bing.png" />
         </div>
       </div>
       <div class="textBar">
         <input type="text" id="query" placeholder="Enter a query to search" />
-        <button onclick="search()">Search 🔎︎</button>
+        <button onclick="search()">Search</button>
       </div>
     </main>
     <div id="floating-div">
@@ -68,9 +60,13 @@
     var engine = document.querySelector('input[name="company"]:checked').value;
 
     if (engine === "google") {
-      let searchUrl = `https://www.google.com/search?q=${encodeURIComponent(text)}`;
+      let searchUrl = `https://www.google.com/search?q=${encodeURIComponent(
+        text
+      )}`;
     } else if (engine === "bing") {
-      let searchUrl = `https://www.bing.com/search?q=${encodeURIComponent(text)}`;
+      let searchUrl = `https://www.bing.com/search?q=${encodeURIComponent(
+        text
+      )}`;
     }
 
     window.location.href = searchUrl;
