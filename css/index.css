@@ -1,3 +1,7 @@
+html {
+  color-scheme: light dark;
+}
+
 @media (orientation: landscape) {
   header {
     display: flex;
