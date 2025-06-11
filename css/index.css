@@ -1,0 +1,131 @@
+html {
+  color-scheme: light dark;
+}
+
+@media (orientation: landscape) {
+  header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  header > * {
+    display: flex;
+    align-items: center;
+  }
+  header > a > span {
+    padding: 0 1rem;
+    color: black;
+  }
+  #website-logo {
+    height: 5.5rem;
+  }
+  #github-logo {
+    height: 3rem;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../img/background.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 88vh;
+  }
+  #select-search-providers {
+    display: flex;
+    justify-content: center;
+    gap: 6ch;
+    padding: 0 0 1rem 0;
+    font-size: medium;
+
+    #google,
+    #bing {
+      display: flex;
+      justify-content: center;
+      gap: 1ch;
+    }
+    #google > input,
+    #bing > input {
+      width: 1rem;
+    }
+    #google > img,
+    #bing > img {
+      height: 2rem;
+    }
+  }
+
+  .textBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 0.6rem;
+    padding-left: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    width: 60vw;
+  }
+
+  input[type="text"],
+  button {
+    border: none;
+    font-size: 1.2rem;
+  }
+
+  input[type="text"] {
+    border-radius: 0.6rem 0 0 0.6rem;
+  }
+  button {
+    border-radius: 0 0.6rem 0.6rem 0;
+    padding: 0.8rem 1rem;
+    box-sizing: border-box;
+    background-color: #4caf50;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+  button:hover {
+    background-color: lightcoral;
+  }
+  button:active {
+    transform: scale(1.05);
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  #floating-div {
+    position: fixed;
+    right: 2rem;
+    bottom: 2rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 1rem;
+    padding: 0.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.5s ease-in-out;
+
+    #floating-icon {
+      height: 3.4rem;
+      border-radius: 0.8rem;
+    }
+  }
+  #floating-div:hover {
+    transform: translate(0, -10px);
+  }
+ 
+  }
+
+
+#query {
+  flex-grow: 1;
+  outline: none;
+}
+#query:active,
+#query:focus {
+  background-color: transparent;
+}
