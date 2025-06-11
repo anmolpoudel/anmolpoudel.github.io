@@ -93,7 +93,7 @@
     .heart:nth-child(2) { left: 60px; animation-delay: 1s; }
     .heart:nth-child(3) { left: 120px; animation-delay: 2s; }
     .heart:nth-child(4) { left: 180px; animation-delay: 3s; }
-    .bottom-logo {
+    #bottom-logo {
   position: fixed;
   bottom: 20px;
   left: 20px;
@@ -102,8 +102,11 @@
   z-index: 999;
   transition: transform 0.3s ease;
 }
+#bottom-logo {
+  border-radius: 100rem;
+}
 
-.bottom-logo:hover {
+#bottom-logo:hover {
   transform: scale(1.1);
 }
 
@@ -123,9 +126,10 @@
       <div class="heart"></div>
     </div>
   </div>
-  <a href="/pages/jsHub.html" target="_blank" class="logo-link">
-  <img src="/img/js.png" class="bottom-logo">
-</a>
-
-</body>
+  <div>
+    <a href="./pages/search.html" class="logo-link">
+      <img src="/img/website logo.png" id="bottom-logo">
+    </a>
+  </div>
+ </body>
 </html>
