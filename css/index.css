@@ -108,13 +108,14 @@ html {
     align-items: center;
     justify-content: center;
     transition: transform 0.5s ease-in-out;
-
+  }
     #floating-icon {
       height: 3.4rem;
       border-radius: 0.8rem;
     }
   }
-  #special-div:hover {
+  
+  #floating-div:hover {
     transform: translate(0, -10px);
   }
    #special-div {
@@ -128,17 +129,17 @@ html {
     align-items: center;
     justify-content: center;
     transition: transform 0.5s ease-in-out;
-
-    #floating-icon {
+   }
+    #special-icon {
       height: 3.4rem;
       border-radius: 0.8rem;
     }
-  }
+  
   #special-div:hover {
     transform: translate(0, -10px);
   }
  
-  }
+  
 
 
 #query {
