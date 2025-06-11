@@ -5,36 +5,43 @@
   <title>I LOVE YOU DALLO</title>
   
   <style>
-     body {
-      background: #fff0f5;
-      font-family: 'Courier New', Courier, monospace;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      overflow: hidden;
-      margin: 0;
-    }
+    body {
+  background: #fff0f5;
+  font-family: 'Courier New', Courier, monospace;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  position: relative; /* KEY: make body the reference for absolutely-positioned hearts */
+}
 
-    .container {
-      position: relative;
-      font-size: 2.5rem;
-      color: #e91e63;
-    }
 
-    .typing {
+.container {
+  position: relative;
+  font-size: 2.5rem;
+  color: #e91e63;
+  text-align: center;
+}
+
+
+.typing {
   white-space: nowrap;
   overflow: hidden;
   border-right: 3px solid #e91e63;
-  width: 0;
   max-width: 100%;
-  animation: typing 5s steps(39) forwards, blink 0.7s step-end infinite;
+  animation: typing 4s steps(36) forwards, blink 0.7s step-end infinite;
+  text-shadow: 0 0 10px #e91e63, 0 0 20px #ff69b4;
+
+
 }
+
 
 
     @keyframes typing {
       from { width: 0 }
-      to { width: 10ch }
+      to { width: 36ch }
     }
 
     @keyframes blink {
@@ -42,10 +49,15 @@
     }
 
     .hearts {
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  pointer-events: none;
+  z-index: -1; /* Send behind the text */
+}
+
 
     .heart {
       position: absolute;
@@ -89,10 +101,11 @@
     }
 
     /* Random heart positions */
-    .heart:nth-child(1) { left: 10px; animation-delay: 0s; }
-    .heart:nth-child(2) { left: 60px; animation-delay: 1s; }
-    .heart:nth-child(3) { left: 120px; animation-delay: 2s; }
-    .heart:nth-child(4) { left: 180px; animation-delay: 3s; }
+    .heart:nth-child(1) { left: 10%; animation-delay: 0s; }
+    .heart:nth-child(2) { left: 30%; animation-delay: 1s; }
+    .heart:nth-child(3) { left: 60%; animation-delay: 2s; }
+    .heart:nth-child(4) { left: 80%; animation-delay: 3s; }
+
     #bottom-logo {
   position: fixed;
   bottom: 20px;
@@ -113,12 +126,40 @@
 .logo-link {
   display: inline-block;
 }
+#message {
+  display: none;
+  position: fixed;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ffe4e1;
+  color: #e91e63;
+  padding: 20px 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  font-size: 1.2rem;
+  text-align: center;
+  z-index: 10;
+  animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 20px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
 
   </style>
 </head>
 <body>
   <div class="container">
-    <div class="typing">I LOVE YOU DALLO</div>
+    <div class="typing">I LOVVVEEEEEE YOOOUUUUU DALLLLLOOOO</div>
     <div class="hearts">
       <div class="heart"></div>
       <div class="heart"></div>
@@ -131,5 +172,32 @@
       <img src="/img/website logo.png" id="bottom-logo">
     </a>
   </div>
+  <div id="message" style="display:none; font-size: 1.5rem; margin-top: 20px;">
+    You're my favorite hello and hardest goodbye💖
+  </div>
+  
+  <script>
+    setTimeout(() => {
+      document.getElementById('message').style.display = 'block';
+    }, 4500); // Show after typing finishes
+  </script>
+  <div>
+    <script>
+      document.addEventListener('click', (e) => {
+        const heart = document.createElement('div');
+        heart.className = 'heart';
+        heart.style.left = e.clientX + 'px';
+        heart.style.top = e.clientY + 'px';
+        document.body.appendChild(heart);
+    
+        setTimeout(() => heart.remove(), 4000); // Clean up
+      });
+    </script>
+    
+  </div>
+  <audio autoplay loop>
+    <source src="music.mp3" type="audio/mpeg">
+    </audio>
+  
  </body>
 </html>
