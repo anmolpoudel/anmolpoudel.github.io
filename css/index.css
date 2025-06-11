@@ -1,8 +1,12 @@
-@media (orientation: portrait) {
+html {
+  color-scheme: light dark;
+}
+
+@media (orientation: landscape) {
   header {
     display: flex;
     justify-content: space-between;
-    font-size: 1.2rem;
+    font-size: 2rem;
     font-weight: bold;
   }
   header > * {
@@ -10,14 +14,14 @@
     align-items: center;
   }
   header > a > span {
-    padding: 0 0.4rem;
+    padding: 0 1rem;
     color: black;
   }
   #website-logo {
-    height: 3.5rem;
+    height: 5.5rem;
   }
   #github-logo {
-    height: 2rem;
+    height: 3rem;
   }
 
   main {
@@ -34,8 +38,8 @@
   #select-search-providers {
     display: flex;
     justify-content: center;
-    gap: 2ch;
-    padding: 0 0 0.5rem 0;
+    gap: 6ch;
+    padding: 0 0 1rem 0;
     font-size: medium;
 
     #google,
@@ -46,11 +50,11 @@
     }
     #google > input,
     #bing > input {
-      width: 0.8rem;
+      width: 1rem;
     }
     #google > img,
     #bing > img {
-      height: 1.5rem;
+      height: 2rem;
     }
   }
 
@@ -59,15 +63,15 @@
     justify-content: space-between;
     align-items: center;
     border-radius: 0.6rem;
+    padding-left: 1rem;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    width: 80vw;
+    width: 60vw;
   }
 
   input[type="text"],
   button {
     border: none;
-    padding: 0.6rem 1rem;
-    font-size: 0.9rem;
+    font-size: 1.2rem;
   }
 
   input[type="text"] {
@@ -75,6 +79,7 @@
   }
   button {
     border-radius: 0 0.6rem 0.6rem 0;
+    padding: 0.8rem 1rem;
     box-sizing: border-box;
     background-color: #4caf50;
     color: white;
@@ -94,8 +99,8 @@
 
   #floating-div {
     position: fixed;
-    right: 1rem;
-    bottom: 1rem;
+    right: 2rem;
+    bottom: 2rem;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     border-radius: 1rem;
     padding: 0.3rem;
@@ -105,11 +110,42 @@
     transition: transform 0.5s ease-in-out;
 
     #floating-icon {
-      height: 2.5rem;
+      height: 3.4rem;
       border-radius: 0.8rem;
     }
   }
-  #floating-div:hover {
+  #special-div:hover {
     transform: translate(0, -10px);
   }
+   #special-div {
+    position: fixed;
+    left: 2rem;
+    bottom: 2rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 1rem;
+    padding: 0.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.5s ease-in-out;
+
+    #floating-icon {
+      height: 3.4rem;
+      border-radius: 0.8rem;
+    }
+  }
+  #special-div:hover {
+    transform: translate(0, -10px);
+  }
+ 
+  }
+
+
+#query {
+  flex-grow: 1;
+  outline: none;
+}
+#query:active,
+#query:focus {
+  background-color: transparent;
 }
