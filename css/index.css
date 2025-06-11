@@ -130,7 +130,7 @@ html {
     transition: transform 0.5s ease-in-out;
 
     #special-icon {
-      height: 3.4rem;
+      height: 1rem;
       border-radius: 0.8rem;
     }
   }
