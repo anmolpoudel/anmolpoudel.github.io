@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Magnate</title>
+    <link
+      rel="shortcut icon"
+      href="./img/website logo.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="./css/search.css" />
+    <link rel="stylesheet" href="./css/search-portrait.css" />
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif, system;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div>
+        <img src="./img/website logo.png" id="website-logo" />
+        <span style="color: #414e3a">Magnate</span>
+      </div>
+      <a
+        href="https://github.com/anmolpoudel/anmolpoudel.github.io/"
+        target="_blank"
+      >
+        <img src="./img/github.png" id="github-logo" /><span>GitHub</span>
+      </a>
+    </header>
+    <main>
+      <div id="select-search-providers">
+        <div id="google">
+          <input type="radio" name="company" value="google" checked />
+          <img src="./img/google.png" />
+        </div>
+        <div id="bing">
+          <input type="radio" name="company" value="bing" />
+          <img src="./img/bing.png" />
+        </div>
+      </div>
+      <div class="textBar">
+        <input type="text" id="query" placeholder="Enter a query to search" />
+        <button onclick="search()">Search</button>
+      </div>
+    </main>
+    <div id="floating-div">
+      <a href="./pages/special.html" target="_blank">
+        <img src="./img/js.png`" id="floating-icon" />
+      </a>
+        </div>
+        <div id="special-div">
+      <a href="./pages/jsHub.html" target="_blank">
+        <img src="./img/js.png`" id="special-icon" />
+      </a>
+    </div>
+  </body>
+</html>
+<script>
+  function search() {
+    var text = document.getElementById("query").value;
+    var engine = document.querySelector('input[name="company"]:checked').value;
+
+    if (engine === "google") {
+      var searchUrl = `https://www.google.com/search?q=${encodeURIComponent(
+        text
+      )}`;
+    } else if (engine === "bing") {
+      var searchUrl = `https://www.bing.com/search?q=${encodeURIComponent(
+        text
+      )}`;
+    }
+
+    window.location.href = searchUrl;
+  }
+
+  document
+    .getElementById("query")
+    .addEventListener("keydown", function (event) {
+      if (event.keyCode === 13) {
+        search();
+      }
+    });
+</script>
