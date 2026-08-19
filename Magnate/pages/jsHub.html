@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Magnate | JS Practise</title>
+    <link
+      rel="shortcut icon"
+      href="../img/calculator.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="../css/jsHub.css" />
+  </head>
+  <body>
+    <main id="container">
+      <h1 style="text-decoration: underline">Simple Calculator</h1>
+      <div id="user-input">
+        <input type="number" placeholder="Enter first number" id="number1" />
+        <select id="operation">
+          <option value="+">+</option>
+          <option value="-">-</option>
+          <option value="*">*</option>
+          <option value="/">÷</option>
+        </select>
+        <input type="number" placeholder="Enter second number" id="number2" />
+      </div>
+      <div style="margin-top: 1rem">
+        <input type="button" value="Calculate" onclick="calculate()" />
+      </div>
+    </main>
+    <footer>
+      <div>&copy; 2024 - Anmol Poudel</div>
+    </footer>
+  </body>
+</html>
+<script defer>
+  function calculate() {
+    var a = document.getElementById("number1").value;
+    var b = document.getElementById("number2").value;
+    var op = document.getElementById("operation").value;
+    let result = 0;
+
+    if (op == "+") {
+      result = parseFloat(a) + parseFloat(b);
+    } else if (op == "-") {
+      result = parseFloat(a) - parseFloat(b);
+    } else if (op == "*") {
+      result = parseFloat(a) * parseFloat(b);
+    } else if (op == "/") {
+      result = parseFloat(a) / parseFloat(b);
+    }
+
+    var existingModal = document.getElementById("resultModal");
+    if (existingModal) {
+      existingModal.remove();
+    }
+
+    var modal = document.createElement("div");
+    modal.id = "resultModal";
+    modal.textContent = `${a} ${op} ${b} = ${result}`;
+    modal.style.boxShadow = "rgba(149, 157, 165, 0.2) 0px 8px 24px";
+    modal.style.fontSize = "xx-large";
+    modal.style.width = "max-content";
+    modal.style.marginTop = "2rem";
+    modal.style.padding = "2rem";
+    document.getElementById("container").appendChild(modal);
+  }
+</script>
