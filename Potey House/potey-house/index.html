@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Potey House — Potey, Chura, Bangles, Hair Pins and beautiful accessories.">
+  <title>Potey House | Tradition • Beauty • Style</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="topbar">
+    <span>🚚 Delivery all over Nepal</span>
+    <span>♡ Quality You Can Trust</span>
+    <span>💬 Order on WhatsApp</span>
+    <span class="social-mini">Instagram&nbsp;&nbsp; Facebook&nbsp;&nbsp; TikTok</span>
+  </div>
+
+  <header class="header">
+    <a class="brand" href="#home" aria-label="Potey House home">
+      <div class="logo">PH<small>♔</small></div>
+      <div>
+        <div class="brand-name">POTEY HOUSE</div>
+        <div class="tagline">Tradition • Beauty • Style</div>
+      </div>
+    </a>
+
+    <nav class="nav">
+      <a class="active" href="#home">Home</a>
+      <a href="#shop">Shop</a>
+      <a href="#categories">Categories</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="header-actions">
+      <button aria-label="Search" onclick="focusSearch()">⌕</button>
+      <button aria-label="Wishlist" onclick="showMessage('Wishlist coming soon ❤️')">♡</button>
+      <button aria-label="Cart" onclick="showMessage('Your cart is ready for future products 🛍️')">🛒</button>
+    </div>
+    <button class="menu-btn" onclick="toggleMenu()" aria-label="Open menu">☰</button>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="script">Welcome to</div>
+        <h1>POTEY HOUSE</h1>
+        <div class="hero-line">Tradition <b>•</b> Beauty <b>•</b> Style</div>
+        <p>Beautiful Potey, Chura, Bangles, Hair Accessories &amp; More</p>
+        <a class="primary-btn" href="#shop">Shop Now <span>→</span></a>
+      </div>
+      <div class="hero-art">
+        <div class="bangle-art">
+          <span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <div class="flower f1">✿</div><div class="flower f2">✿</div>
+      </div>
+    </section>
+
+    <section class="benefits">
+      <div><strong>🚚 Fast Delivery</strong><small>All over Nepal</small></div>
+      <div><strong>♡ Trusted Quality</strong><small>Handpicked Items</small></div>
+      <div><strong>♡ Affordable Prices</strong><small>Best deals</small></div>
+      <div><strong>◉ Easy Ordering</strong><small>Just message us</small></div>
+    </section>
+
+    <section class="section" id="categories">
+      <div class="section-title"><span>—</span> Shop by Category <span>—</span></div>
+      <div class="categories">
+        <button class="category-card" onclick="filterProducts('Potey')">
+          <div class="category-photo potey-photo">◯</div><b>Potey</b><span>→</span>
+        </button>
+        <button class="category-card" onclick="filterProducts('Chura')">
+          <div class="category-photo chura-photo">◯</div><b>Chura</b><span>→</span>
+        </button>
+        <button class="category-card" onclick="filterProducts('Bangles')">
+          <div class="category-photo bangles-photo">◯</div><b>Bangles</b><span>→</span>
+        </button>
+        <button class="category-card" onclick="filterProducts('Hair Pins')">
+          <div class="category-photo pin-photo">✦</div><b>Hair Pins</b><span>→</span>
+        </button>
+        <button class="category-card" onclick="filterProducts('Hair Accessories')">
+          <div class="category-photo hair-photo">✿</div><b>Hair Accessories</b><span>→</span>
+        </button>
+        <button class="category-card" onclick="filterProducts('All')">
+          <div class="category-photo other-photo">♡</div><b>Other Items</b><span>→</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="section shop-section" id="shop">
+      <div class="section-title"><span>—</span> Featured Products ♥ <span>—</span></div>
+      <div class="shop-toolbar">
+        <input id="search" type="search" placeholder="Search products..." oninput="renderProducts()">
+        <div class="filters">
+          <button class="filter active" data-filter="All" onclick="filterProducts('All')">All</button>
+          <button class="filter" data-filter="Potey" onclick="filterProducts('Potey')">Potey</button>
+          <button class="filter" data-filter="Chura" onclick="filterProducts('Chura')">Chura</button>
+          <button class="filter" data-filter="Bangles" onclick="filterProducts('Bangles')">Bangles</button>
+          <button class="filter" data-filter="Hair Pins" onclick="filterProducts('Hair Pins')">Hair Pins</button>
+        </div>
+      </div>
+      <div class="products" id="products"></div>
+    </section>
+
+    <section class="about-section" id="about">
+      <div class="about-image">
+        <div class="about-rings"></div>
+      </div>
+      <div class="about-copy">
+        <div class="small-heading">About Potey House ♥</div>
+        <h2>Made for moments that deserve to shine.</h2>
+        <p>Potey House is a small online shop dedicated to bringing beautiful Potey, Chura, Bangles, Hair Accessories and more.</p>
+        <p>We believe every woman deserves to feel confident and beautiful, every single day.</p>
+        <div class="signature">Thank you for supporting a small business! ♥</div>
+      </div>
+      <div class="stats">
+        <strong>500+</strong><span>Happy Customers</span>
+        <strong>50+</strong><span>Unique Designs</span>
+        <strong>100%</strong><span>Customer Satisfaction</span>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div>
+        <div class="small-heading">Contact Us</div>
+        <h2>We'd love to hear from you.</h2>
+        <p>Have a question about a product, size, delivery or availability?</p>
+        <a class="whatsapp" id="whatsappMain" href="#" target="_blank">💬 Chat on WhatsApp</a>
+      </div>
+      <div class="contact-details">
+        <p>📱 WhatsApp: <b id="phoneText">+977 98XXXXXXXX</b></p>
+        <p>📸 Instagram: <b>@poteyhouse</b></p>
+        <p>📍 Kathmandu, Nepal</p>
+        <p>🚚 Delivery available across Nepal</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div><b>POTEY HOUSE</b><br><small>Tradition • Beauty • Style</small></div>
+    <div>Made with ♥ in Nepal</div>
+    <div>Privacy &nbsp; | &nbsp; Delivery &nbsp; | &nbsp; Returns &nbsp; | &nbsp; Terms</div>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>
